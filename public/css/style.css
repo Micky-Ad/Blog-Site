@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.header {
+  background-color: aqua;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.nav{
+list-style: none;
+display: flex;
+gap: 50px;
+font-size: 30px;
+color: black;
+
+}
+
+.nav a {
+  text-decoration: none;
+color: black;
+}
+
+.container {
+width: min(1400px,90%);
+margin: auto;
+}
+
+.panel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 5px solid black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.panelheader {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panelbody {
+  padding: 20px;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+font-size: 20px;
+display: block;
+}
+
+form {
+  display: block;
+}
+
+.btn {
+ padding: 14px 28px;
+ font-size: 20px;
+ border: none;
+ background-color: aqua;
+ cursor: pointer;
+}
