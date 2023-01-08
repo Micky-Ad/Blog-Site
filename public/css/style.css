@@ -76,3 +76,7 @@ form {
  background-color: aqua;
  cursor: pointer;
 }
+
+form a {
+padding-left: 50px;
+}
