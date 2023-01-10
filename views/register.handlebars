@@ -5,9 +5,9 @@
 
     </div>
     <div class="panelbody">
-      <form>
-        <input type="text" placeholder="username">
-        <input type="password" placeholder="password">
+      <form id="account-form">
+        <input id="username" type="text" placeholder="username">
+        <input id="password" type="password" placeholder="password">
         <button class="btn">Create an Account</button>
        
 
@@ -16,3 +16,28 @@
   </div>
 
 </div>
+
+
+<script>
+  // script to pass the user registration data info to the server
+  var accountForm = document.getElementById("account-form");
+  accountForm.addEventListener("submit",async function(){
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var data = {
+      username: username,
+      password: password
+    }
+    var response = await fetch("http://localhost:3001/api/users",{
+      method:"POST", 
+      headers:{
+        "Accept":"application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)        
+})
+var apidata = await response.json();
+console.log(apidata);
+  }) 
+</script>

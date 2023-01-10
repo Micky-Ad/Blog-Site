@@ -35,4 +35,6 @@ const sess = {
 
 app.use(session(sess));
 
-app.listen(PORT);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
+});
