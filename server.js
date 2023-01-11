@@ -10,7 +10,6 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = 3001;
 
-app.use(routes);
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 
@@ -34,6 +33,7 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
