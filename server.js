@@ -8,11 +8,12 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
-const PORT = 3001;
+const PORT = 3002;
 
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 
+// telling the express application that the data coming is in Json format
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -33,6 +34,7 @@ const sess = {
 };
 
 app.use(session(sess));
+// user for the routes
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

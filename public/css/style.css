@@ -57,7 +57,8 @@ margin: auto;
   padding: 20px;
 }
 
-form input {
+form input, 
+form textarea {
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
@@ -75,8 +76,15 @@ form {
  border: none;
  background-color: aqua;
  cursor: pointer;
+ text-decoration: none;
+ color: black;
 }
 
 form a {
 padding-left: 50px;
+}
+
+.user-blog{
+  margin-top: 50px;
+  text-align: center;
 }

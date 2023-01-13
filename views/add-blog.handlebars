@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="panel">
+    <div class="panelheader">
+      <h2>Create New Post</h2>
+
+    </div>
+    <div class="panelbody">
+      <form id="account-form">
+        <input id="title" type="text" placeholder="Add a title">
+        <input value="{{session.user_id}}" id="user_id" type="hidden"/>
+
+        <textarea name="" id="content" placeholder="Content"></textarea>
+       
+        <button class="btn">Create</button>
+       
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // script to pass the user login data info to the server
+  var accountForm = document.getElementById("account-form");
+  accountForm.addEventListener("submit", async function () {
+    event.preventDefault();
+    var title = document.getElementById("title").value;
+    var content = document.getElementById("content").value;
+    var userId = document.getElementById("user_id").value;
+    var date = new Date();
+    var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+
+
+    var data = {
+      title: title,
+      content: content
+      user_id: userId
+      date: current_date
+    }
+    var response = await fetch("http://localhost:3002/api/blogs/add", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    var apidata = await response.json();
+    alert(apidata.message)
+
+  }) 
+</script>
