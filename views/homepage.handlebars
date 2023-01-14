@@ -1,12 +1,23 @@
 <div class="container">
-<div class="panel">
-  <div class="panelheader">
-<h2>MVC Test</h2>
-<span>Date:01/07/2023</span>
+  <div class="user-blog">
+    {{#each posts}}
+
+    <div class="panel">
+      <div class="panelheader">
+        <h2>{{dataValues.title}}</h2>
+        <span>Posted By:{{dataValues.user.dataValues.username}} on {{dataValues.date}}</span>
+      </div>
+      <div class="panelbody">
+        <p>{{dataValues.content}}</p>
+      </div>
+    </div>
+
+
+
+    {{/each}}
+
+
+
   </div>
-  <div class="panelbody">
-<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea accusamus illo nostrum quibusdam officia nam asperiores minus! Illum, quos consequuntur aperiam corrupti ad ipsam distinctio sunt quibusdam inventore quasi cupiditate?</p>
-  </div>
-</div>
 
 </div>

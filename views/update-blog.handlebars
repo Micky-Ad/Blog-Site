@@ -1,18 +1,18 @@
 <div class="container">
   <div class="panel">
     <div class="panelheader">
-      <h2>Create New Post</h2>
+      <h2>Update Post</h2>
 
     </div>
     <div class="panelbody">
       <form id="account-form">
-        <input id="title" type="text" placeholder="Add a title">
-        <input value="{{session.user_id}}" id="user_id" type="hidden"/>
+        <input id="title" type="text" value="{{post.dataValues.title}}">
+        <input value="{{session.user_id}}" id="user_id" type="hidden" />
 
-        <textarea name="" id="content" placeholder="Content"></textarea>
-       
-        <button class="btn">Create</button>
-       
+        <textarea name="" id="content" placeholder="Content">{{post.dataValues.content}}</textarea>
+
+        <button class="btn">Update</button>
+
 
       </form>
     </div>
@@ -31,6 +31,7 @@
     var date = new Date();
     var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 
+    var id = "{{post.dataValues.id}}"
 
     var data = {
       title: title,
@@ -38,8 +39,8 @@
       user_id: userId,
       date: current_date
     }
-    var response = await fetch("http://localhost:3002/api/blogs/add", {
-      method: "POST",
+    var response = await fetch("http://localhost:3002/api/blogs/update/" + id, {
+      method: "PUT",
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"

@@ -15,6 +15,8 @@ router.post("/add", withAuth, async (req, res) => {
 
 router.put("/update/:id", withAuth, async (req, res) => {
   var id = req.params.id;
+  console.log(id);
+  console.log(req.body);
 
   try {
     const blogData = await Blog.update(

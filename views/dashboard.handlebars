@@ -1,8 +1,36 @@
 <div class="container">
-<div class="user-blog">
-<a class="btn" href="/add-blog">Add new blog</a>
+  <div class="user-blog">
+    {{#each posts}}
 
+    <div class="panel">
+      <div class="panelheader">
+        <h2>{{dataValues.title}}</h2>
+        <span>Posted By:{{dataValues.user.dataValues.username}} on {{dataValues.date}}</span>
+      </div>
+      <div class="panelbody">
+        <p>{{dataValues.content}}</p>
+        <button onclick="deletePost({{dataValues.id}})" class="btn btn-delete">Delete</button>
+        <a href="/blog/update/{{dataValues.id}}" class="btn">Update</a>
+      </div>
+    </div>
+
+    {{/each}}
+    <a class="btn" href="/add-blog">Add a New Blog</a>
+
+
+  </div>
 
 </div>
 
-</div>
+<script>
+  async function deletePost(id) {
+    var response = await fetch("http://localhost:3002/api/blogs/" + id, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+    })
+    window.location.reload()
+  }
+</script>

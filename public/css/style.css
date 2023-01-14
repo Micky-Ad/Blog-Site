@@ -87,4 +87,9 @@ padding-left: 50px;
 .user-blog{
   margin-top: 50px;
   text-align: center;
+  align-items: center;
+}
+
+.btn-delete{
+  background-color: red;
 }
