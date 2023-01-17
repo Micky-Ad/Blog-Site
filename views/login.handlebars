@@ -2,7 +2,6 @@
   <div class="panel">
     <div class="panelheader">
       <h2>Login Account</h2>
-    
     </div>
     <div class="panelbody">
       <form id="account-form">
@@ -10,11 +9,9 @@
         <input id="password" type="password" placeholder="password">
         <button class="btn">login</button>
         <a href="/register">Register</a>
-
       </form>
     </div>
   </div>
-
 </div>
 
 <script>
@@ -37,11 +34,11 @@
       body: JSON.stringify(data)
     })
     var apidata = await response.json();
-  
-    if (apidata.message == "You are now logged in!"){
+
+    if (apidata.message == "You are now logged in!") {
       window.location.href = "/dashboard"
-    }else {
-        alert(apidata.message)
+    } else {
+      alert(apidata.message)
     }
   }) 
 </script>

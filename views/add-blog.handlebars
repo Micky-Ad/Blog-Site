@@ -7,13 +7,9 @@
     <div class="panelbody">
       <form id="account-form">
         <input id="title" type="text" placeholder="Add a title">
-        <input value="{{session.user_id}}" id="user_id" type="hidden"/>
-
+        <input value="{{session.user_id}}" id="user_id" type="hidden" />
         <textarea name="" id="content" placeholder="Content"></textarea>
-       
         <button class="btn">Create</button>
-       
-
       </form>
     </div>
   </div>
@@ -21,7 +17,7 @@
 </div>
 
 <script>
-  // script to pass the user login data info to the server
+  // script to pass the user login data to the server
   var accountForm = document.getElementById("account-form");
   accountForm.addEventListener("submit", async function () {
     event.preventDefault();
@@ -29,8 +25,7 @@
     var content = document.getElementById("content").value;
     var userId = document.getElementById("user_id").value;
     var date = new Date();
-    var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-
+    var current_date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
     var data = {
       title: title,
@@ -48,6 +43,5 @@
     })
     var apidata = await response.json();
     alert(apidata.message)
-
   }) 
 </script>

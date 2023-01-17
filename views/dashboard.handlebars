@@ -1,11 +1,13 @@
 <div class="container">
   <div class="user-blog">
-    {{#each posts}}
 
+    {{#each posts}}
     <div class="panel">
       <div class="panelheader">
-        <h2>{{dataValues.title}}</h2>
-        <span>Posted By:{{dataValues.user.dataValues.username}} on {{dataValues.date}}</span>
+        <a href="/blog/comment/{{dataValues.id}}">
+          <h2>{{dataValues.title}}</h2>
+        </a>
+        <span>Posted By: <b> {{dataValues.user.dataValues.username}} </b> on {{dataValues.date}}</span>
       </div>
       <div class="panelbody">
         <p>{{dataValues.content}}</p>
@@ -15,9 +17,8 @@
     </div>
 
     {{/each}}
+
     <a class="btn" href="/add-blog">Add a New Blog</a>
-
-
   </div>
 
 </div>

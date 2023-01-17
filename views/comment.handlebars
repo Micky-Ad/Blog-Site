@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="user-blog">
+
+    {{#each posts}}
+    <div class="panel">
+      <div class="panelheader">
+        <h2>{{dataValues.title}}</h2>
+        <span>Posted By: <b> {{dataValues.user.dataValues.username}} </b> on {{dataValues.date}}</span>
+      </div>
+      <div class="panelbody">
+        <p>{{dataValues.content}}</p>
+        <input type="hidden" id="blog-id" value="{{dataValues.id}}">
+      </div>
+    </div>
+    {{/each}}
+
+    <div class="panel">
+      <div class="panelheader">
+      </div>
+      <div class="panelbody">
+        <p>Comment: </p>
+        <form id="comment-form">
+          <textarea id="comment"></textarea>
+          <button class="btn"> Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // script to pass the user login data info to the server
+  var commentForm = document.getElementById("comment-form");
+  commentForm.addEventListener("submit", async function () {
+    event.preventDefault();
+    var comment = document.getElementById("comment").value;
+    var blogId = document.getElementById("blog-id").value;
+
+    var date = new Date();
+    var current_date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
+    var data = {
+      comment: comment,
+      date: current_date,
+      blog_id: blogId
+    }
+    var response = await fetch("http://localhost:3002/api/comment/add", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    var apidata = await response.json();
+    alert(apidata.message)
+  }) 
+</script>

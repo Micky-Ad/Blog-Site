@@ -8,12 +8,8 @@
       <form id="account-form">
         <input id="title" type="text" value="{{post.dataValues.title}}">
         <input value="{{session.user_id}}" id="user_id" type="hidden" />
-
         <textarea name="" id="content" placeholder="Content">{{post.dataValues.content}}</textarea>
-
         <button class="btn">Update</button>
-
-
       </form>
     </div>
   </div>
@@ -29,7 +25,7 @@
     var content = document.getElementById("content").value;
     var userId = document.getElementById("user_id").value;
     var date = new Date();
-    var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    var current_date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
     var id = "{{post.dataValues.id}}"
 

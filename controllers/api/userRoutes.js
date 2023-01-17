@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// When logged out got to home page
+// logging out and back to home page
 router.get("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
