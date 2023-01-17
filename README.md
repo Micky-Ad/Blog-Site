@@ -30,7 +30,7 @@
 ## Installation
 -----------------------------------------------------------------------
 
-Installations needed to use the App 
+If you decide to try out the code the following installations are needed:
 ```bash
 -	npm install 
 -	npm install express
