@@ -48,7 +48,7 @@ Installations needed to use the App
 # Screenshot:
 ----------------------------------------------------------------------
 
- ![App Home Page When Loggedin]()
+ ![App Home Page When Loggedin](public/assets/image/screenShotSample1.PNG)
 
 # Usage:
 ----------------------------------------------------------------------
