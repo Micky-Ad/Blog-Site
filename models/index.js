@@ -27,4 +27,5 @@ Comment.hasOne(User, {
 User.belongsTo(Comment, {
   foreignKey: "user_id",
 });
+
 module.exports = { User, Blog, Comment };

@@ -12,6 +12,7 @@
         <p>{{dataValues.content}}</p>
       </div>
     </div>
+
     {{#if dataValues.comments}}
     <h2>Comments:</h2>
     {{/if}}
@@ -21,7 +22,7 @@
       </div>
       <div class="panelbody">
         <p>{{dataValues.comment}}</p>
-        <p>{{dataValues.user_id}} Posted on:{{dataValues.date}}</p>
+        <p>{{dataValues.username}} Posted on:{{dataValues.date}}</p>
       </div>
     </div>
     {{/each}}

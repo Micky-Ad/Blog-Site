@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   var posts = await Blog.findAll({
     include: [User, Comment, User],
   });
-  console.log(posts[0].comments);
+  // console.log(posts[0].comments);
   res.render("homepage", {
     posts: posts,
     session: req.session,

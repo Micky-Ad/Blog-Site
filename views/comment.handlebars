@@ -10,6 +10,7 @@
       <div class="panelbody">
         <p>{{dataValues.content}}</p>
         <input type="hidden" id="blog-id" value="{{dataValues.id}}">
+        <input type="text" id="user-name" value="{{dataValues.user_name}}">
       </div>
     </div>
     {{/each}}
@@ -30,12 +31,14 @@
 </div>
 
 <script>
-  // script to pass the user login data info to the server
+  // script to pass the comments of a user to the blog
   var commentForm = document.getElementById("comment-form");
   commentForm.addEventListener("submit", async function () {
     event.preventDefault();
     var comment = document.getElementById("comment").value;
     var blogId = document.getElementById("blog-id").value;
+    var userName = document.getElementById("user-name").value;
+
 
     var date = new Date();
     var current_date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
@@ -43,7 +46,8 @@
     var data = {
       comment: comment,
       date: current_date,
-      blog_id: blogId
+      blog_id: blogId,
+      username: userName
     }
     var response = await fetch("http://localhost:3002/api/comment/add", {
       method: "POST",
