@@ -43,7 +43,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   });
 });
 
-// Ddding blog route
+// Adding blog route
 router.get("/add-blog", withAuth, async (req, res) => {
   res.render("add-blog", {
     session: req.session,
