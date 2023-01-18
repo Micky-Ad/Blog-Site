@@ -66,7 +66,7 @@ router.get("/blog/update/:id", withAuth, async (req, res) => {
   });
 });
 
-// Updating blog route
+// Adding comment route
 router.get("/blog/comment/:id", withAuth, async (req, res) => {
   var id = req.params.id;
   var post = await Blog.findAll({
