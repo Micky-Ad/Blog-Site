@@ -14,7 +14,7 @@
 -	When users click on the button to add a new blog post they will be prompted to enter both a title and content for their blog post.  When the user clicks on the button to create a new blog post, the title and contents of the user’s post are saved and are taken back to an updated dashboard with the new blog post.
 -	If the user clicks on one of their existing posts in the dashboard, they can delete or update their post.
 -	When the user clicks on the logout option in the navigation, they are signed out of the site
--	Users are able to view comments but are prompted to log in again before they can add, update, or delete comments.
+-	Users are able to view comments but are prompted to log in again before they can add, update, or delete posts/comments.
 
 
 # Built with
