@@ -25,7 +25,7 @@
 
 <script>
   async function deletePost(id) {
-    var response = await fetch("http://localhost:3002/api/blogs/" + id, {
+    var response = await fetch("/api/blogs/" + id, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
