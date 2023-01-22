@@ -43,7 +43,7 @@ If you decide to try out the code the following installations are needed:
 ```
 # Links
 -----------------------------------------------------------------------
-### [Deployed App On Heroku]()
+### [Deployed App On Heroku](https://blog-site-by-micky.herokuapp.com/)
 ### [Repository](https://github.com/Micky-Ad/Blog-Site)
 
 
