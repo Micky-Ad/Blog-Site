@@ -33,7 +33,7 @@
       user_id: userId,
       date: current_date
     }
-    var response = await fetch("http://localhost:3002/api/blogs/add", {
+    var response = await fetch("/api/blogs/add", {
       method: "POST",
       headers: {
         "Accept": "application/json",

@@ -34,7 +34,7 @@
       user_id: userId,
       date: current_date
     }
-    var response = await fetch("http://localhost:3002/api/blogs/update/" + id, {
+    var response = await fetch("/api/blogs/update/" + id, {
       method: "PUT",
       headers: {
         "Accept": "application/json",
